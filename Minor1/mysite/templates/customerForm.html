@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer</title>
+    <link rel="stylesheet" href="customerForm.css" />
+    <link rel="stylesheet" href="Navbar.css" />
+  </head>
+  <body>
+    <div class="navbar-container">
+      <div class="nav" id="navbar">
+        <div class="nav-left">
+          <a href="Home.html">
+            <div class="nav-logo">
+              <img src="./assets/logo1.png" alt="" />
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="customerForm-mainContainer">
+      <div class="customerForm-container">
+        <div class="customerForm-title">
+          <h1>Wanna get recommendations of relevant products?</h1>
+          <p>Fill the form below and we will recommend you the best products</p>
+        </div>
+        <hr />
+        <!-- {% if result %} -->
+        <!-- <h1>Flower you're trying to classify is {{result}}</h1> -->
+        <!-- {% endif %} -->
+        <div class="customerForm-form">
+          <form id="product-form" action="" method="POST">
+            <!-- {% csrf_token %} -->
+            <div class="customer-id">
+              <label>Customer Id</label>
+              <input type="number" id="customerId-input" placeholder="ID" min="0" required>
+            </div>
+            <div class="customer-location">
+              <div class="customerForm-input">
+                <label for="location">Location </label>
+                <p>Enter your current locating country</p>
+                <select name="location" required>
+                  <option value="International">International</option>
+                  <option value="United Kingdom">United Kingdom</option>
+                </select>
+              </div>
+            </div>
+            <div class="customer-time">
+              <label for="date-time-input">Select a date and time</label>
+              <input
+                type="datetime-local"
+                id="date-time-input"
+                name="date-time"
+                max="2011-12-09T12:50:00"
+                min="2010-12-01T08:26:00"
+                required
+              />
+            </div>
+            <div class="products-optionContainer" id="products-optionContainer">
+              <h1>Products</h1>
+              <p>
+                Enter any 1 product with its corresponding quantity and get
+                relatable product recommendations.
+              </p>
+              <input type="text" id="search-input" placeholder="Search..." />
+              <div id="product-list">
+              </div>
+            </div>
+            <button id="submit-btn" type="submit" onclick="submitForm()">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="customerForm.js"></script>
+  </body>
+</html>
