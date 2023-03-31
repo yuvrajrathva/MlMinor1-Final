@@ -32,13 +32,22 @@ productCheckboxes.forEach((checkbox) => {
   });
 });
 
+
+// Search bar
+
 let products = [];
 fetch("./assets/product.csv")
   .then((response) => response.text())
   .then((data) => {
     products = data.split("\n").map((name) => name.trim());
-    // console.log(values); // Do something with the names array
-  });
+});
+
+let values = [];
+fetch("./assets/value.csv")
+  .then((response) => response.text())
+  .then((data) => {
+    values = data.split("\n").map((name) => name.trim());
+});
 
 // Get the search input element and products container element
 const searchInput = document.getElementById("search-input");

@@ -1,20 +1,26 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Recommendation</title>
-    <link rel="stylesheet" href="./Home.css" />
-    <link rel="stylesheet" href="./Navbar.css">
+    <link
+      rel="shortcut icon"
+      href="{% static 'logo1.ico' %}"
+      type="image/x-icon"
+    />
+    <title>MarketMorph</title>
+    <link rel="stylesheet" href="{% static 'Home.css' %}" />
+    <link rel="stylesheet" href="{% static 'Navbar.css' %}" />
   </head>
   <body>
     <div class="navbar-container">
       <div class="nav" id="navbar">
         <div class="nav-left">
-          <a href="Home.html">
+          <a href="home/">
             <div class="nav-logo">
-              <img src="./assets/logo1.png" alt="" />
+              <img src="{% static 'logo1.png' %}" alt="" />
             </div>
           </a>
         </div>
@@ -25,23 +31,24 @@
         <div class="homepage-left">
           <h1 class="homepageTitle">Discover your perfect match today!</h1>
           <p class="homepageDescription">
-            Discover the perfect item for you among our wide selection. 
+            Discover the perfect item for you among our wide selection.
           </p>
           <p class="homepageDescription">
-            Say farewell to wasted effort and forgotten necessities thanks to our streamlined recommendation system. 
+            Say farewell to wasted effort and forgotten necessities thanks to
+            our streamlined recommendation system.
           </p>
           <div class="homepageButton">
-            <a href="customerForm.html">
+            <a href="customer/">
               <button class="homepageButton-customer">Customer</button>
             </a>
-            <a href="retailer.html">
+            <a href="retailer/">
               <button class="homepageButton-retailer">Retailer</button>
             </a>
           </div>
           <div class="geeks"></div>
         </div>
         <div class="homepage-right">
-          <img src="./assets/homepage-img.svg" alt="" />
+          <img src="{% static 'homepage-img.svg' %}" alt="" />
         </div>
       </div>
     </div>

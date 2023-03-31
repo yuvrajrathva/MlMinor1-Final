@@ -1,54 +1,59 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Retailer</title>
-    <link rel="stylesheet" href="retailer.css">
-    <link rel="stylesheet" href="Navbar.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MarketMorph</title>
+    <link rel="shortcut icon" href="{% static 'logo1.ico' %}" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'retailer.css' %}" />
+    <link rel="stylesheet" href="{% static 'Navbar.css' %}" />
+    <!-- <link rel="stylesheet" href="retailer.css" /> -->
+    <!-- <link rel="stylesheet" href="Navbar.css" /> -->
+  </head>
+  <body>
     <div class="navbar-container">
       <div class="nav" id="navbar">
         <div class="nav-left">
-          <a href="Home.html">
+          <a href="/">
             <div class="nav-logo">
-              <img src="./assets/logo1.png" alt="" />
+              <img src="{% static 'logo1.png' %}" alt="" />
             </div>
           </a>
         </div>
       </div>
     </div>
     <div class="retailer-mainContainer">
-        <div class="retailer-container">
-            <div class="retailer-title">
-                <h1>Let's analyze customer</h1>
-            </div>
-            <div class="retailer-specialReport">
-                <h1>Special Report</h1>
-                <p>Here is the special report for you</p>
-                <ul>
-                    <li>This customer is most frequent buyer.</li> <!--Using customer id-->
-                    <li>This customer spend maximum money.</li> 
-                    <li>This customer comes on most busy month.</li>
-                    <li>This customer comes on most busy time of the day.</li>
-                    <li>This customer comes on most busy day of week.</li>
-                    <li>This customer had buy most buying product.</li>
-                </ul>
-            </div>
-            <div class="retailer-report">
-                <h1>Cluster of this Customer</h1>
-                <p>Here is the cluster of this customer</p>
-                <ul>
-                    <li>Cluster 1</li>
-                    <li>Cluster 2</li>
-                    <li>Cluster 3</li>
-                    <li>Cluster 4</li>
-                    <li>Cluster 5</li>
-                </ul>
-            </div>
+      <div class="retailer-container">
+        <div class="retailer-title">
+          <h1>Let's analyze customer</h1>
         </div>
+        <div class="retailer-specialReport">
+          <h1>Special Report</h1>
+          <p>Here is the special report for you</p>
+          <ul>
+            <li>This customer is most frequent buyer.</li>
+            <!--Using customer id-->
+            <li>This customer spend maximum money.</li>
+            <li>This customer comes on most busy month.</li>
+            <li>This customer comes on most busy time of the day.</li>
+            <li>This customer comes on most busy day of week.</li>
+            <li>This customer had buy most buying product.</li>
+          </ul>
+        </div>
+        <div class="retailer-report">
+          <h1>Cluster of this Customer</h1>
+          <p>Here is the cluster of this customer</p>
+          <ul>
+            <li>Cluster 1</li>
+            <li>Cluster 2</li>
+            <li>Cluster 3</li>
+            <li>Cluster 4</li>
+            <li>Cluster 5</li>
+          </ul>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
