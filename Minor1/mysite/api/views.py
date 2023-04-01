@@ -1,4 +1,7 @@
 # from django.shortcuts import render
+
+# Create your views here.
+# from django.shortcuts import render
 import pandas as pd
 from joblib import load
 import numpy as np
@@ -8,17 +11,17 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from .serializers import ProductSerializer
-from .models import Product
+from shop.models import Product
 model = load('./savedModels/model_customer.joblib')
 
-product_type_df=pd.read_csv('./static/product.csv')
+# product_type_df=pd.read_csv('./static/product.csv')
 # RFM_df=pd.read_csv('RFM.csv')
 # new_df=pd.read_csv('new_df.csv')
 
-def predict(APIView):
+def PredictViewSet(APIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
-
+    
     def get(self,request):
         return Response({'status':'success'})
 

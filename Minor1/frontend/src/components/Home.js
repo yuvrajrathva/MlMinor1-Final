@@ -2,6 +2,7 @@ import React from 'react';
 import './Home.css';
 import Navbar from './Navbar';
 import homepageImg from "../assets/homepage-img.svg"
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -21,12 +22,12 @@ const Home = () => {
               our streamlined recommendation system.
             </p>
             <div className="homepageButton">
-              <a href="customer/">
+              <Link to="/customer">
                 <button className="homepageButton-customer">Customer</button>
-              </a>
-              <a href="retailer/">
+              </Link>
+              <Link to="/retailer">
                 <button className="homepageButton-retailer">Retailer</button>
-              </a>
+              </Link>
             </div>
             <div className="geeks"></div>
           </div>

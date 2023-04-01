@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+html {
+  font-size: 10px;
+}
+body {
+  margin: 0;
+}
+.customerForm-mainContainer {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  background-color: #000;
+  color: #fff;
+}
+hr {
+  color: grey;
+  opacity: 0.5;
+}
+.customerForm-container {
+  box-sizing: border-box;
+  max-width: 800px;
+  margin: auto;
+  padding: 3rem 2% 0 2%;
+  font-size: 2rem;
+  text-align: start;
+}
+.customerForm-title h1 {
+  margin: 1rem 0 0;
+}
+.customerForm-title p {
+  margin: 0 0 1rem;
+}
+.customer-location {
+  margin: 2rem 0;
+}
+.customer-location label {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+.customer-location p {
+  font-size: 1.5rem;
+  margin: 0;
+}
+.customer-location select {
+  background: transparent;
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+  font-family: Arial;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  margin: 1rem 0;
+  cursor: pointer;
+}
+.customer-location option {
+  color: #000;
+}
+.customer-time, .customer-id{
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin: 2rem 0;
+}
+.customer-time label, .customer-id label{
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+.customer-time input, .customer-id input{
+    background: transparent;
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+  font-family: Arial;
+  color: #fff;
+  font-size: 1.5rem;
+  /* font-weight: 600; */
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  cursor: pointer;
+}
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+.products-optionContainer label {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.products-optionContainer h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0;
+}
+.products-optionContainer p {
+  font-size: 1.5rem;
+  margin: 0;
+}
+#search-input{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin: 2rem 0;
+}
+#search-input {
+  width: 100%;
+  /* max-width: 500px; */
+  box-sizing: border-box;
+  padding: 1rem 2%;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-color: transparent;
+  color: #ffffff;
+}
+#search-input input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid grey;
+  width: 100%;
+  color: #ffffff;
+}
+#search-input input::-webkit-search-cancel-button{
+    position:relative;
+    right:10px;    
+}
+#search-input input::placeholder{
+  color: grey;
+  opacity: 0.8;
+}
+ #customerId-input input::placeholder{
+  color: grey;
+  opacity: 0.8;
+ }
+#search-input input:focus {
+  outline: none;
+  color: #ffffff;
+}
+.product-option {
+  margin: 10px 0;
+}
+.customerForm-radio {
+  width: 100%;
+  margin: 1rem auto;
+  padding: 1.5rem 1rem;
+  background: #000;
+  border: 1px solid #ffffff;
+  border-radius: 0.5rem;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+.customerForm-quantity input{
+  margin: 1rem auto;
+  padding: 1.7rem 1rem;
+  background: #000;
+  border: 1px solid #ffffff;
+  border-radius: 0.5rem;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+.customerForm-radio:hover {
+  background: rgb(30, 30, 30);
+}
+.customerForm-input {
+  margin-right: 0.5rem;
+}
+.customerForm-radio input[type="radio"]:after, .customerForm-radio input[type="number"]:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -5px;
+  position: relative;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  background-color: #000000;
+  border: 2px solid white;
+}
+
+.customerForm-radio input[type="radio"]:checked:after, .customerForm-radio input[type="number"]:checked:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  left: -5px;
+  position: relative;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  background-color: #d1d3d1;
+  border: 2px solid black;
+}
+#submit-btn{
+    background: transparent;
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+  font-family: Arial;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  box-sizing: border-box;
+  padding: 1.2rem 2.2rem;
+  width: fit-content;
+  text-decoration: none;
+  /* margin: 2rem  0; */
+  cursor: pointer;
+}
