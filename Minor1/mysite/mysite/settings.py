@@ -29,6 +29,8 @@ INSTALLED_APPS = [
     'shop',
     'rest_framework',
     'api',
+    'corsheaders',
+
 ]
 
 MIDDLEWARE = [
@@ -39,6 +41,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -61,7 +64,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
-
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+)
+CSRF_TRUSTED_ORIGINS = ('http://localhost:3000',)
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 

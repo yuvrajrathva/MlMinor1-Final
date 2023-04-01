@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from "react";
 import "./Customer.css";
 import Navbar from "./Navbar";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import products from "../assets/product_json.json";
+import axios from "axios";
+import { API_BASE_URL } from "./../config";
 
 const Customer = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [customerId, setCustomerId] = useState(0.0);
   const [country, setCountry] = useState("");
-  const [time, setTime] = useState("");
   const [product, setProduct] = useState("");
   const [quantity, setQuantity] = useState(0);
 
+  const backendUrl = API_BASE_URL;
+  const navigate = useNavigate();
   //search bar
   function handleSearch(event) {
     setSearchTerm(event.target.value);
@@ -34,11 +37,7 @@ const Customer = () => {
     setCountry(event.target.value);
     console.log(country);
   }
-  //Time
-  function handleTimeChange(event) {
-    setTime(event.target.value);
-    console.log(time);
-  }
+
   //Product
   function handleCheckboxChange(event) {
     setProduct(event.target.value);
@@ -54,11 +53,30 @@ const Customer = () => {
   function handleClick() {
     // Send all amount to backend from here
     console.log("Submitted");
-    console.log("Customer Id: " + customerId + "Data Type: " + typeof customerId);
+    console.log(
+      "Customer Id: " + customerId + "Data Type: " + typeof customerId
+    );
     console.log("Country: " + country + "Data Type: " + typeof country);
-    console.log("Time: " + time + "Data Type: " + typeof time);
     console.log("Product: " + product + "Data Type: " + typeof product);
     console.log("Quantity: " + quantity + "Data Type: " + typeof quantity);
+
+    // axios
+    async function sendData() {
+      const response = await axios.post(backendUrl + "/predict/", {
+        customer_id: customerId,
+        country: country,
+        product: product,
+        quantity: quantity,
+      });
+      if (response.status === 200) {
+        console.log("Success");
+        navigate("/retailer", { state: { data: response.data } });
+      } else {
+        console.log("Error");
+        alert("Error! Please try again.");
+      }
+    }
+    sendData();
   }
 
   return (
@@ -84,7 +102,7 @@ const Customer = () => {
               <div className="customer-id">
                 <label>Customer Id</label>
                 <input
-                  type="text"
+                  type="number"
                   id="customerId-input"
                   placeholder="ID"
                   onChange={handleCustomerIdChange}
@@ -105,18 +123,6 @@ const Customer = () => {
                   </select>
                 </div>
               </div>
-              {/* <div className="customer-time">
-                <label htmlFor="date-time-input">Select a date and time</label>
-                <input
-                  type="datetime-local"
-                  id="date-time-input"
-                  name="date-time"
-                  max="2011-12-09T12:50:00"
-                  min="2010-12-01T08:26:00"
-                  onChange={handleTimeChange}
-                  required
-                />
-              </div> */}
               <div
                 className="products-optionContainer"
                 id="products-optionContainer"

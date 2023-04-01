@@ -5,5 +5,5 @@ from rest_framework.routers import DefaultRouter
 router = DefaultRouter()
 
 urlpatterns = [
-    path('predict/', PredictViewSet, name = 'predict'),
+    path('predict/', PredictViewSet.as_view(), name = 'predict'),
 ]
