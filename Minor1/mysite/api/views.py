@@ -154,8 +154,11 @@ class PredictViewSet(APIView):
                     return product_type_df['ProductType'][i]
         y_pred[0] = int(y_pred[0])
 
+        flag =0
+
         for i in range(len(RFM_df)):
-            if(RFM_df['CustomerID'][i]==CustomerID):    
+            if(RFM_df['CustomerID'][i]==CustomerID):  
+                flag = 1  
                 if y_pred[0] == 0:
                     y_pred = 'Spends a good amount overall'
                 elif y_pred[0] == 1:
@@ -164,10 +167,11 @@ class PredictViewSet(APIView):
                     y_pred = 'Prefers buying Accesories and spent a descent amount of money'
                 elif y_pred[0] == 3:
                     y_pred = 'Less frequently visits the shop and prefers buying Home Decoration'
-                elif y_pred[0] == 4:
+                elif y_pred[0] == -1:
                     y_pred=return_monetary(test_data)+return_Frequency(test_data)+return_Recency(test_data)+f'The user likes buying {return_frequent_product(test_data)} type of product most frequently'
-                else:
-                    y_pred='New Customer, No previous data'
+        
+        if flag == 0:
+            y_pred='New Customer, No previous data'
 
         return Response({'prediction':y_pred})
 

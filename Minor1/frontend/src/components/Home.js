@@ -1,8 +1,8 @@
-import React from 'react';
-import './Home.css';
-import Navbar from './Navbar';
-import homepageImg from "../assets/homepage-img.svg"
-import { Link } from 'react-router-dom';
+import React from "react";
+import "./Home.css";
+import Navbar from "./Navbar";
+import homepageImg from "../assets/homepage-img.svg";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -23,11 +23,13 @@ const Home = () => {
             </p>
             <div className="homepageButton">
               <Link to="/customer">
-                <button className="homepageButton-customer">Customer</button>
+                <button className="homepageButton-customer">
+                  Place Your Orders
+                </button>
               </Link>
-              <Link to="/retailer">
+              {/* <Link to="/retailer">
                 <button className="homepageButton-retailer">Retailer</button>
-              </Link>
+              </Link> */}
             </div>
             <div className="geeks"></div>
           </div>
@@ -38,6 +40,6 @@ const Home = () => {
       </div>
     </>
   );
-}
+};
 
-export default Home
+export default Home;
