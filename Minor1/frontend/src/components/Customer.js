@@ -23,7 +23,7 @@ const Customer = () => {
       (product) =>
         product.product &&
         product.product.toLowerCase().includes(event.target.value.toLowerCase())
-    );
+    ).slice(0, 10);
     setFilteredProducts(filteredProducts);
   }
 
