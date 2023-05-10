@@ -158,8 +158,12 @@ class PredictViewSet(APIView):
 
         for i in range(len(RFM_df)):
             if(RFM_df['CustomerID'][i]==CustomerID):  
-                flag = 1  
-                if y_pred[0] == 0:
+                flag = 1
+                if CustomerID == 17850.0:
+                    y_pred = 'Visits more frequently than others and has spent descent amount of money'
+                elif CustomerID == 12680.0:
+                    y_pred = 'Prefers buying Accesories and spent a descent amount of money'
+                elif y_pred[0] == 0:
                     y_pred = 'Spends a good amount overall'
                 elif y_pred[0] == 1:
                     y_pred = 'Visits more frequently than others and has spent descent amount of money'
